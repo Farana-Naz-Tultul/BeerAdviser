@@ -10,26 +10,27 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val findBeer = findViewById<Button>(R.id.find_beer)
-        findBeer.setOnClickListener{
-            val beerColor = findViewById<Spinner>(R.id.beer_color)
-            val color = beerColor.selectedItem
-            val beerList = getBeers(color.toString())
-            val beers = beerList.reduce { str, item -> str + '\n' + item }
+        val findBook = findViewById<Button>(R.id.find_book)
+        findBook.setOnClickListener{
+            val bookGenre = findViewById<Spinner>(R.id.book_genre)
+            val genre = bookGenre.selectedItem
+            val bookList = getBooks(genre.toString())
+            val books = bookList.reduce { str, item -> str + '\n' + item }
             val brands = findViewById<TextView>(R.id.brands)
-            brands.text = beers
+            brands.text = books
         }
 
-        val brands = findViewById<TextView> (R.id.brands)
-        brands.text = "Gottle of geer"
+        //val brands = findViewById<TextView> (R.id.brands)
+        //brands.text = "Gottle of geer"
     }
 
-    fun getBeers(color: String): List<String> {
-        return when (color) {
-            "Light" -> listOf("Jail Pale Ale", "Lager Lite")
-            "Amber" -> listOf("Jack Amber", "Red Moose")
-            "Brown" -> listOf("Brown Bear Beer", "Bock Brownie")
-            else -> listOf("Gout Stout", "Dark Daniel")
+    fun getBooks(genre: String): List<String> {
+        return when (genre) {
+            "Horror" -> listOf("The Haunting of Hill House", "Dracula By Bram Stoker")
+            "Non Fiction" -> listOf("Crying In H Mart", "Empire of Pain")
+            "Literature" -> listOf("Jane Eyre", "The Great Gatsby")
+            "Easy Reading" -> listOf("Office Girl", "Station Eleven")
+            else -> listOf("Harry Potter Series", "The Lord Of The Rings")
         }
     }
 }

@@ -9,20 +9,20 @@
     tools:context=".MainActivity">
 
     <Spinner
-        android:id="@+id/beer_color"
+        android:id="@+id/book_genre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_margin="16dp"
-        android:entries="@array/beer_colors"/>
+        android:entries="@array/book_genre"/>
 
     <Button
-        android:id="@+id/find_beer"
+        android:id="@+id/find_book"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_margin="16dp"
-        android:text="@string/find_beer" />
+        android:text="@string/find_book" />
 
     <TextView
         android:id="@+id/brands"
@@ -30,5 +30,5 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_margin="16dp"
-        android:text="@string/brands" />
+        android:text="@string/genre" />
 </LinearLayout>
